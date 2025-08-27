@@ -9,9 +9,17 @@ import { connectToDatabase } from "./connection/dbConnect.js";
 
 const app = express();
 
+const allowedOrigin = "https://ezekieltabukewebsite.netlify.app/";
+
+const corsOptions = {
+  origin: allowedOrigin,
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true,
+};
 app.use(express.json());
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 app.get("/", (req, res) => res.send({ hello: "My first Message." }));
 app.use("/api/v1/comment", commentRoute);
