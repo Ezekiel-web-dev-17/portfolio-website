@@ -13,9 +13,8 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors());
 app.use(cookieParser());
-app.use("/api/v1/");
 app.get("/", (req, res) => res.send({ hello: "My first Message." }));
-app.use("/comment", commentRoute);
+app.use("/api/v1/comment", commentRoute);
 app.use(errorMiddleware);
 
 app.listen(PORT, async () => {
