@@ -9,7 +9,7 @@ import { connectToDatabase } from "./connection/dbConnect.js";
 
 const app = express();
 
-const allowedOrigin = "https://ezekieltabukewebsite.netlify.app/";
+const allowedOrigin = "https://ezekieltabukewebsite.netlify.app";
 
 const corsOptions = {
   origin: allowedOrigin,
